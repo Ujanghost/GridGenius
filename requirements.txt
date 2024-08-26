@@ -1,0 +1,23 @@
+# Flask and related libraries
+Flask>=2.3
+flask-cors>=3.1
+flask-bcrypt>=1.0
+flask-jwt-extended>=4.4
+
+# Database (SQLite as lightweight option, SQLAlchemy for ORM)
+SQLAlchemy>=2.0
+
+# Frontend-related libraries (Optional, if needed for server-side rendering or static file handling)
+flask-sqlalchemy>=3.0
+flask-migrate>=4.0
+
+# Environment management
+python-dotenv>=1.0
+
+# Testing and Development Tools
+pytest>=7.0
+pytest-flask>=1.2
+coverage>=7.2
+
+# Additional utilities
+requests>=2.0
