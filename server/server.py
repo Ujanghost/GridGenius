@@ -1,23 +1,16 @@
-from flask import flask, jsonify
+from flask import Flask, jsonify, render_template
+import os
 
+template_dir = os.path.abspath('../templates')  # Set the absolute path to templates
+app = Flask(__name__, template_folder=template_dir)
 
-app=flask(__name__)
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-@app.route("/api/users",methods=['GET'])
+@app.route('/api/data')
+def get_data():
+    return jsonify({"message": "API data response"})
 
-def users():
-    return jsonify(
-        {
-            "users":[
-                'arpan',
-                'zach',
-                'jessie'
-                
-            ]
-        }
-    )
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=8080)
+if __name__ == '__main__':
+    app.run(debug=True)

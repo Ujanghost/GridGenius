@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridGenius - Home</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include custom CSS if needed -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">GridGenius</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to GridGenius</h1>
+        <p class="lead">Monitor and optimize your electricity usage in real-time.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+    </div>
+
+    <!-- Overview of Features -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <i class="fas fa-bolt fa-3x mb-3"></i>
+                <h4>Real-Time Monitoring</h4>
+                <p>Track your electricity usage in real-time with intuitive charts and insights.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-chart-bar fa-3x mb-3"></i>
+                <h4>Energy Consumption Reports</h4>
+                <p>Get detailed reports on your energy consumption patterns.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fas fa-bell fa-3x mb-3"></i>
+                <h4>Peak Usage Alerts</h4>
+                <p>Receive alerts when your usage exceeds set thresholds.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-Time Data Visualization -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Live Power Consumption</h4>
+                <!-- Placeholder for a line chart -->
+                <canvas id="liveChart" width="400" height="200"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h4>Usage by Device</h4>
+                <!-- Placeholder for a bar chart -->
+                <canvas id="barChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">GridGenius</h5>
+                    <p>Manage your energy consumption efficiently and effectively with GridGenius.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#!" class="text-dark">Contact Us</a></li>
+                        <li><a href="#!" class="text-dark">Privacy Policy</a></li>
+                        <li><a href="#!" class="text-dark">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!" class="text-dark"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#!" class="text-dark"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#!" class="text-dark"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 GridGenius. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Include Bootstrap JS and other dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Chart.js for charts (for example) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Add custom JS for charts if needed -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
