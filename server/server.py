@@ -1,8 +1,11 @@
 from flask import Flask, jsonify, render_template
+from flask_cors import CORS
 import os
 
 template_dir = os.path.abspath('../templates')  # Set the absolute path to templates
 app = Flask(__name__, template_folder=template_dir)
+cors = CORS(app,origins='*')
+
 
 @app.route('/')
 def home():
