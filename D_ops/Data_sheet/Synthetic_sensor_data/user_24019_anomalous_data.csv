@@ -1,0 +1,5 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Light,2,64,215,0.3,16,1.024,5.12,Yes
+TV,1,166,211,0.79,21,3.486,17.43,Yes
+AC,1,1849,218,8.48,23,42.527,212.635,Yes
+Fridge,1,234,219,1.07,21,4.914,24.57,Yes

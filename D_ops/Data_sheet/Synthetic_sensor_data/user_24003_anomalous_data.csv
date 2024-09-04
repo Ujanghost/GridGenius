@@ -1,0 +1,9 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Mobile,1,8,215,0.04,4,0.032,0.16,Yes
+Washing Machine,1,732,214,3.42,21,15.372,76.86,Yes
+Induction,2,1905,212,8.99,24,45.72,228.6,Yes
+Geyser,1,1671,235,7.11,21,35.091,175.455,Yes
+Chimney,2,100,216,0.46,18,1.8,9.0,Yes
+Inverter,2,960,240,4.0,23,22.08,110.39999999999999,Yes
+Desktop,2,295,237,1.24,8,2.36,11.799999999999999,Yes
+Laptop,2,89,219,0.41,19,1.691,8.455,Yes

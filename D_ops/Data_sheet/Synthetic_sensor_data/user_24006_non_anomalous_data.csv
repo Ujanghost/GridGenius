@@ -1,0 +1,8 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Mobile,1,20,222,0.09,6,0.12,0.6,No
+TV,2,110,221,0.5,22,2.42,12.1,No
+AC,1,1968,221,8.9,13,25.584,127.92,No
+Washing Machine,2,908,220,4.13,4,3.632,18.16,No
+Induction,2,1969,226,8.71,3,5.907,29.535,No
+Fridge,1,291,220,1.32,18,5.238,26.19,No
+Water Purifier,2,56,220,0.25,11,0.616,3.08,No

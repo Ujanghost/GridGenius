@@ -1,0 +1,6 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Fan,3,74,231,0.32,2,0.148,0.74,Yes
+Mobile,2,11,235,0.05,16,0.176,0.8799999999999999,Yes
+AC,1,1745,239,7.3,4,6.98,34.900000000000006,Yes
+Washing Machine,1,781,217,3.6,3,2.343,11.715,Yes
+Geyser,1,2282,234,9.75,19,43.358,216.79,Yes

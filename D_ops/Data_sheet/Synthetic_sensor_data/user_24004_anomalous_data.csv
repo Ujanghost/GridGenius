@@ -1,0 +1,11 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Fan,1,51,240,0.21,18,0.918,4.59,Yes
+TV,2,70,210,0.33,16,1.12,5.6000000000000005,Yes
+AC,2,1390,216,6.44,11,15.29,76.44999999999999,Yes
+Washing Machine,1,1239,219,5.66,17,21.063,105.315,Yes
+Water Purifier,2,142,214,0.66,20,2.84,14.2,Yes
+Water Pump,1,809,219,3.69,15,12.135,60.675,Yes
+Chimney,2,198,214,0.93,3,0.594,2.9699999999999998,Yes
+Inverter,1,392,216,1.81,22,8.624,43.120000000000005,Yes
+Desktop,1,117,213,0.55,15,1.755,8.774999999999999,Yes
+Laptop,1,50,237,0.21,20,1.0,5.0,Yes

@@ -1,0 +1,6 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Mobile,3,17,221,0.08,24,0.408,2.04,No
+AC,1,1733,222,7.81,22,38.126,190.63,No
+Water Purifier,3,95,221,0.43,5,0.475,2.375,No
+Water Pump,1,691,222,3.11,1,0.691,3.4549999999999996,No
+Laptop,3,107,230,0.47,2,0.214,1.07,No

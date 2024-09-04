@@ -1,0 +1,9 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Light,2,85,222,0.38,16,1.36,6.800000000000001,No
+Mobile,2,10,229,0.04,16,0.16,0.8,No
+AC,1,1873,223,8.4,5,9.365,46.825,No
+Washing Machine,2,875,228,3.84,19,16.625,83.125,No
+Fridge,1,157,225,0.7,9,1.413,7.065,No
+Geyser,2,2131,229,9.31,15,31.965,159.825,No
+Chimney,2,178,222,0.8,13,2.314,11.57,No
+Desktop,1,286,224,1.28,19,5.434,27.17,No

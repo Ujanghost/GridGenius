@@ -1,0 +1,5 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Fan,1,88,226,0.39,5,0.44,2.2,No
+Geyser,2,1699,220,7.72,20,33.98,169.89999999999998,No
+Desktop,2,254,222,1.14,14,3.556,17.78,No
+Laptop,2,81,225,0.36,8,0.648,3.24,No

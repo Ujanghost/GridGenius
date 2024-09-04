@@ -1,0 +1,4 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Fridge,2,160,227,0.7,16,2.56,12.8,No
+Water Pump,1,433,223,1.94,22,9.526,47.629999999999995,No
+Geyser,1,1832,230,7.97,12,21.984,109.92000000000002,No

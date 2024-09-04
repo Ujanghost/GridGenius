@@ -1,0 +1,7 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Mobile,1,15,240,0.06,22,0.33,1.6500000000000001,Yes
+Induction,1,1698,232,7.32,2,3.396,16.98,Yes
+Water Pump,3,854,232,3.68,15,12.81,64.05,Yes
+Geyser,1,2313,236,9.8,6,13.878,69.39,Yes
+Chimney,1,197,240,0.82,11,2.167,10.834999999999999,Yes
+Inverter,2,666,213,3.13,7,4.662,23.31,Yes

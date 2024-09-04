@@ -1,0 +1,8 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Fan,1,67,238,0.28,17,1.139,5.695,Yes
+TV,3,183,233,0.79,20,3.66,18.3,Yes
+Induction,2,1836,233,7.88,11,20.196,100.98,Yes
+Water Purifier,2,94,215,0.44,18,1.692,8.459999999999999,Yes
+Water Pump,1,524,218,2.4,13,6.812,34.06,Yes
+Inverter,2,1368,218,6.28,24,32.832,164.16,Yes
+Laptop,2,102,216,0.47,15,1.53,7.65,Yes

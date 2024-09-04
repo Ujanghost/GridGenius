@@ -1,0 +1,14 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Light,1,27,228,0.12,22,0.594,2.9699999999999998,No
+Fan,3,74,231,0.32,2,0.148,0.74,Yes
+Mobile,2,11,235,0.05,16,0.176,0.8799999999999999,Yes
+TV,3,78,221,0.35,19,1.482,7.41,No
+AC,1,1745,239,7.3,4,6.98,34.900000000000006,Yes
+Washing Machine,1,781,217,3.6,3,2.343,11.715,Yes
+Induction,1,1793,230,7.8,1,1.793,8.965,No
+Fridge,1,163,221,0.74,4,0.652,3.2600000000000002,No
+Water Purifier,1,138,225,0.61,7,0.966,4.83,No
+Water Pump,1,619,221,2.8,12,7.428,37.14,No
+Geyser,1,2282,234,9.75,19,43.358,216.79,Yes
+Inverter,1,681,221,3.08,10,6.81,34.05,No
+Laptop,1,115,227,0.51,22,2.53,12.649999999999999,No

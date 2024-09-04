@@ -1,0 +1,7 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Light,1,87,218,0.4,12,1.044,5.220000000000001,Yes
+Fan,2,56,219,0.26,6,0.336,1.6800000000000002,Yes
+Mobile,2,19,239,0.08,8,0.152,0.76,Yes
+Washing Machine,1,865,239,3.62,5,4.325,21.625,Yes
+Chimney,1,229,239,0.96,20,4.58,22.9,Yes
+Inverter,1,924,237,3.9,2,1.848,9.24,Yes

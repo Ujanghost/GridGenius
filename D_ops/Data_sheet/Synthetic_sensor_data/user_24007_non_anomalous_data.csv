@@ -1,0 +1,5 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Light,3,78,227,0.34,12,0.936,4.680000000000001,No
+Washing Machine,1,1116,229,4.87,9,10.044,50.22,No
+Fridge,1,246,220,1.12,1,0.246,1.23,No
+Laptop,1,150,229,0.66,20,3.0,15.0,No

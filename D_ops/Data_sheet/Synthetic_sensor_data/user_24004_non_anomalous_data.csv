@@ -1,0 +1,6 @@
+Appliance Name,No of Appliances,Wattage,Voltage,Ampere,Time On (hours),Electricity Units Spent (kWh),Amount Spent (Rs.),Anomalous
+Light,2,47,230,0.2,7,0.329,1.645,No
+Mobile,2,9,230,0.04,24,0.216,1.08,No
+Induction,2,1391,229,6.07,20,27.82,139.1,No
+Fridge,2,153,229,0.67,17,2.601,13.004999999999999,No
+Geyser,1,2300,223,10.31,11,25.3,126.5,No
