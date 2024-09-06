@@ -11,9 +11,16 @@ cors = CORS(app,origins='*')
 def home():
     return render_template('index.html')
 
+
+@app.route('/')
+def about():
+    return render_template('about.html')
+
 @app.route('/api/data')
 def get_data():
     return jsonify({"message": "API data response"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) #convert it to false in prod
+    
+    
