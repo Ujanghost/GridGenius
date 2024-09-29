@@ -1,0 +1,18 @@
+
+
+{% extends "base.html" %}
+
+{% block canvas %} 
+<div class="shadow-wrap">
+    <div class="form-wrap">
+
+<form method="POST">
+
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Submit</button>
+</form>
+<a class="signup-link" href="{% url "authentication:authView" %}">Signup</a>
+</div>
+</div>
+{% endblock %}

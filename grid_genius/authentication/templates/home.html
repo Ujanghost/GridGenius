@@ -1,0 +1,538 @@
+
+
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block carousel %}
+   
+{# Homepage
+ <a href="{% url "authentication:logout" %}">logout</a> 
+
+<form method="POST" action="{% url 'authentication:logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form> #}
+
+
+  <section class="slider_section">
+      <div class="container-fluid">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 offset-md-2">
+                  <div class="detail-box">
+                    <h1>
+                      Make Design
+                    </h1>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority
+                    </p>
+                    <div>
+                      <a href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                  <div class="img-box">
+                    <img src="{% static 'images/hero.png' %}" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 offset-md-2">
+                  <div class="detail-box">
+                    <h1>
+                      Make Design
+                    </h1>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority
+                    </p>
+                    <div>
+                      <a href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                  <div class="img-box">
+                    <img src="{% static 'images/hero.png' %}" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 offset-md-2">
+                  <div class="detail-box">
+                    <h1>
+                      Make Design
+                    </h1>
+                    <p>
+                      There are many variations of passages of Lorem Ipsum
+                      available, but the majority
+                    </p>
+                    <div>
+                      <a href="">
+                        Read More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                  <div class="img-box">
+                    <img src="{% static 'images/hero.png' %}" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+{% endblock carousel %}
+
+{% block canvas %}
+
+
+  
+  <!-- do section -->
+  <section class="do_section layout_padding-bottom">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          What we do
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="content-box bg-red">
+            <div class="img-box">
+              <img src="{% static 'images/idea.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h6>
+                Original Ideas
+              </h6>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="content-box bg-green">
+            <div class="img-box">
+              <img src="{% static 'images/controller.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h6>
+                Great apps
+              </h6>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="content-box bg-red">
+            <div class="img-box">
+              <img src="{% static 'images/monitor.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h6>
+                High Resolution
+              </h6>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="content-box bg-green">
+            <div class="img-box">
+              <img src="{% static 'images/rocket-ship.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h6>
+                Fast Loading
+              </h6>
+              <p>
+                It is a long established fact that a reader will be distracted
+                by the readable content
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end do section -->
+
+
+  <!-- skill section -->
+
+  <section class="skill_section layout_padding2">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Our Skills
+        </h2>
+      </div>
+      <div class="skill_padding">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="box">
+              <div class="circle" id="circles-1"></div>
+              <h6>
+                Adobe Photoshop
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="box">
+              <div class="circle" id="circles-2"></div>
+              <h6>
+                Adobe Ilustrator
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="box">
+              <div class="circle" id="circles-3"></div>
+              <h6>
+                After Effects
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="box">
+              <div class="circle" id="circles-4"></div>
+              <h6>
+                Adobe XD
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end skill section -->
+
+  <!-- portfolio section -->
+  <section class="portfolio_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Our Portfolio
+        </h2>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="box b-1">
+                <img src="{% static 'images/p-1.png' %}" alt="" />
+                <h4>
+                  Logo Design
+                </h4>
+              </div>
+              <div class="box b-2">
+                <img src="{% static 'images/p-2.png' %}" alt="" />
+                <h4>
+                  Coding
+                </h4>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="box b-3">
+                <img src="{% static 'images/p-3.png' %}" alt="" />
+                <h4>
+                  Bike Design
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="box b-4">
+                <img src="{% static 'images/p-4.png' %}" alt="" />
+                <h4>
+                  Flower Design
+                </h4>
+              </div>
+              <div class="box b-5">
+                <img src="{% static 'images/p-5.png' %}" alt="" />
+                <h4>
+                  Website Design
+                </h4>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="box b-6">
+                <img src="{% static 'images/p-6.png' %}" alt="" />
+                <h4>
+                  More Design
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end portfolio section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Testimonial
+        </h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="client_container layout_padding2">
+              <div class="client_box b-1">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="{% static 'images/client-1.jpg' %}" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      smirth jon
+                    </h5>
+                    <p>
+                      client
+                    </p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    It is a long established fact that a reader will be distracted
+                    
+                  </p>
+                </div>
+              </div>
+              <div class="client_box b-2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="{% static 'images/client-2.jpg' %}" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      smirth den
+                    </h5>
+                    <p>
+                      client
+                    </p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="client_container layout_padding2">
+              <div class="client_box b-1">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="{% static 'images/client-1.jpg' %}" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      smirth jon
+                    </h5>
+                    <p>
+                      client
+                    </p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                   
+                  </p>
+                </div>
+              </div>
+              <div class="client_box b-2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="{% static 'images/client-2.jpg' %}" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      smirth den
+                    </h5>
+                    <p>
+                      client
+                    </p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="client_container layout_padding2">
+              <div class="client_box b-1">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="{% static 'images/client-1.jpg' %}" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      smirth jon
+                    </h5>
+                    <p>
+                      client
+                    </p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+               
+                  </p>
+                </div>
+              </div>
+              <div class="client_box b-2">
+                <div class="client-id">
+                  <div class="img-box">
+                    <img src="{% static 'images/client-2.jpg' %}" alt="" />
+                  </div>
+                  <div class="name">
+                    <h5>
+                      smirth den
+                    </h5>
+                    <p>
+                      client
+                    </p>
+                  </div>
+                </div>
+                <div class="detail">
+                  <p>
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
+          <h2 class="custom_heading">Contact Us</h2>
+          <form action="#">
+            <div>
+              <input type="text" placeholder="Name" />
+            </div>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Phone Number" />
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="d-flex  mt-4 ">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static 'images/contact.jpg' %}" alt="" class="w-100" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  
+
+
+
+  {% endblock canvas %}
+
+
+
+
+
+
+
+
+
+
+
