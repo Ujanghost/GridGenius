@@ -1,11 +1,18 @@
 
 from django.urls import path,include
-from .views import authView, home
+from authentication.views import *
+
+app_name = "authentication" 
 
 urlpatterns = [
   
   path("",home,name="home"),
-  path("signup/",authView,name='authView'),
+  # path("signup/",,name='authView'),
   path("accounts/",include("django.contrib.auth.urls")),
-
+  path('about/', about_view, name='about'),  # About page
+  path('contact/', contact_view, name='contact'),  # Contact page
+  path('service/', service_view, name='service'),  # Services page
+  path('portfolio/', portfolio_view, name='portfolio'),  # Services page
+  path('signup/', signup, name='signup'),
+  path('login/', login_view, name='login'),
 ]

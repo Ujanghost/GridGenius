@@ -14,9 +14,7 @@
     {% block content %}{% endblock content %}
 </body>
 </html> -->
-
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,15 +34,8 @@
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
-
-
-
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/style_home.css' %}">
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet" />
@@ -57,273 +48,18 @@
 
 <body>
 
-    <div class="hero_area">
-        <!-- header section strats -->
-        <header class="header_section">
-          <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-              <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/logo.png' %}" alt="" />
-                <span>
-                  Brainwave
-                </span>
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+    {% include 'partials/navbar.html' %}
+
+    {% block contents %} {% endblock contents %}
+    {% include 'partials/footer.html' %}
     
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto mr-2">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">About </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'portfolio' %}">Portfolio </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'services' %}">Services</a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
-                  </li>
-                </ul>
-                <div class="user_option">
-                  <div class="login_btn-container">
-                    <form method="POST" action="{% url 'authentication:logout' %}">
-                        {% csrf_token %}
-                        <button type="submit">Logout</button>
-                    </form>
-                  </div>
-                  <form class="form-inline my-2 my-lg-0">
-                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                  </form>
-                </div>
-              </div>
-              <div class="call_btn">
-                <a href="">
-                  Call: +01234567890
-                </a>
-              </div>
-            </nav>
-          </div>
-        </header>
-        <!-- end header section -->
-
-        {% block carousel %}
-        <!-- carousel section -->
-      {% endblock carousel %}
-
-
-    <!-- custom menu -->
-  <div class="custom_menu-container">
-    <div class="container">
-      <div class="custom_menu">
-        <ul class="navbar-nav ">
-          <li class="nav-item active">
-            <a class="nav-link pl-0" href="">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">About </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'portfolio' %}">Portfolio </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'service' %}">Services</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
-          </li>
-        </ul>
-        <div class="user_option">
-          <div class="login_btn-container">
-            <a href="">
-              Login
-            </a>
-          </div>
-          <form class="form-inline my-2 my-lg-0">
-            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- custom menu -->
-
-  <!-- about section -->
-
-  <section class="about_section layout_padding mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-          <div class="img-box">
-            <img src="{% static 'images/about-img.png' %}" alt="" />
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="detail-box">
-            <div class="custom_heading-container">
-              <h2>
-                About Design
-              </h2>
-            </div>
-
-            <p>
-              It is a long established fact that a reader will be distracted
-              by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less
-              normal distribution of letters, as opposed to using 'Content
-              here , content here', making it
-            </p>
-            <div>
-              <a href="">
-                About More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end about section -->
-
-  {% block canvas %}
-  <!-- child block sections -->
-{% endblock canvas %}
-
-  <!-- info section -->
-  <section class="info_section layout_padding-top layout_padding2-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="info_links pl-lg-5">
-            <h4>
-              Menu
-            </h4>
-            <ul>
-              <li class="active">
-                <a href="">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="{% url 'about' %}">
-                  About
-                </a>
-              </li>
-              <li>
-                <a class="" href="{% url 'portfolio' %}">Portfolio </a>
-              </li>
-              <li>
-                <a class="" href="{% url 'services' %}">Services</a>
-              </li>
-              <li>
-                <a href="{% url 'contact' %}">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="info_contact">
-            <h4>
-              Location
-            </h4>
-            <div>
-              <img src="{% static 'images/loaction.png' %}" alt="" />
-              <p>
-                104 loram ipusm
-              </p>
-            </div>
-            <div>
-              <img src="{% static 'images/telephone.png' %}" alt="" />
-              <p>
-                ( +01 1234567890 )
-              </p>
-            </div>
-            <div>
-              <img src="{% static 'images/envelope.png' %}" alt="" />
-              <p>
-                demo@gmail.com
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="info_social">
-            <h4>
-              Social Link
-            </h4>
-            <div class="social_container">
-              <div>
-                <a href="">
-                  <img src="{% static 'images/facebook.png' %}" alt="" />
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="{% static 'images/twitter-logo.png' %}" alt="" />
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="{% static 'images/instagram.png' %}" alt="" />
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <img src="{% static 'images/linked-sign.png' %}" alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="info_form">
-            <h4>
-              Newsletter
-            </h4>
-            <form action="#">
-              <input type="text" placeholder="Enter Your Email" />
-              <button type="submit">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info_section -->
-
-
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <p>
-      &copy; 2019 All Rights Reserved By
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
-  </footer>
-  <!-- footer section -->
-
-
-
 
     <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/circles.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
-  
+
+
 </body>
 
 </html>
