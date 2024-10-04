@@ -44,13 +44,26 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+ 
+
 </head>
 
 <body>
 
     {% include 'partials/navbar.html' %}
 
-    {% block contents %} {% endblock contents %}
+    {% if messages %}
+    <div id="popup-message" class="popup">
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+
+    <!-- Bell sound when logged in successfully -->
+    <audio id="login-bell" src="{% static 'audio/mixkit-achievement-bell-600.wav' %}" preload="auto"></audio>
+    {% endif %}
+
+    {% block contents %}  {% endblock contents %}
     {% include 'partials/footer.html' %}
     
 
@@ -59,6 +72,20 @@
     <script src="{% static 'js/circles.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
 
+    <script>
+        setTimeout(function() {
+            var popup = document.getElementById("popup-message");
+            if (popup) {
+                popup.style.display = "none";
+            }
+        }, 3000); // 3000ms = 3 seconds
+
+        // Play bell sound when logged in
+        var loginBell = document.getElementById("login-bell");
+        if (loginBell) {
+        loginBell.play();
+                }
+    </script>
 
 </body>
 

@@ -1,6 +1,7 @@
 
 from django.urls import path,include
 from authentication.views import *
+from . import views
 
 app_name = "authentication" 
 
@@ -15,4 +16,5 @@ urlpatterns = [
   path('portfolio/', portfolio_view, name='portfolio'),  # Services page
   path('signup/', signup, name='signup'),
   path('login/', login_view, name='login'),
+  path('logout/', views.logout_view, name='logout'),
 ]

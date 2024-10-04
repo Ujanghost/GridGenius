@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit the container width */
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #d32f2f;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure the form uses full width of the container */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d32f2f;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%; /* Ensure inputs use the full width */
+    box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: lightgreen;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is part of width calculation */
+}
+
+button:hover {
+    background-color: lightgreen;
+}
+
+.message {
+    color: #d32f2f;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#popup-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightgreen;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+.alert {
+    color: white;
+    font-size: 14px;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px;
+        max-width: 350px;
+    }
+}
+
+/* Form inputs and labels */
+form input, form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ensures full width inside the container */
+    box-sizing: border-box;
+}
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Submit button styling */
+form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}

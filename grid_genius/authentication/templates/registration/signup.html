@@ -1,16 +1,46 @@
-<!-- login.html -->
-{% extends 'base.html' %}
 {% load static %}
-{% block contents %}
-<h2>Login</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
-{% if messages %}
-    {% for message in messages %}
-        <div>{{ message }}</div>
-    {% endfor %}
-{% endif %}
-{% endblock %}
+
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login_css.css' %}"> <!-- Link to your CSS -->
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+        
+        {% if messages %}
+            <div id="popup-message" class="popup">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Redirect to Login -->
+        <div class="signup-link">
+            <p>Already have an account? <a href="{% url 'authentication:login' %}">Login</a></p> <!-- Update the URL to your login page -->
+        </div>
+    </div>
+
+    <script>
+        // Hide the popup message after 3 seconds
+        setTimeout(function() {
+            var popup = document.getElementById("popup-message");
+            if (popup) {
+                popup.style.display = "none";
+            }
+        }, 3000); // 3000ms = 3 seconds
+    </script>
+</body>
+</html>
+
