@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Budget Predictor</title>
+    <style>
+        /* Optional: Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .appliance-group {
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Electricity Budget Predictor</h1>
+    <form action="{% url 'formInfo' %}" method="post" id="appliance-form">
+        {% csrf_token %}
+        <div id="appliance-inputs">
+            <h3>Appliance Usage</h3>
+            <div class="appliance-group">
+                <label>Appliance Name:</label>
+                <input type="text" name="appliance_name[]" placeholder="Appliance Name" required>
+                <label>No of Appliances:</label>
+                <input type="number" name="num_appliances[]" placeholder="No of Appliances" min="1" required>
+                <label>Wattage (W):</label>
+                <input type="number" name="wattage[]" placeholder="Wattage" required>
+                <label>Time On (hours):</label>
+                <input type="number" name="time_on[]" placeholder="Time On" required>
+            </div>
+        </div>
+        <button type="button" onclick="addAppliance()">Add Another Appliance</button>
+        <button type="button" onclick="finishInput()">Done</button>
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    <script>
+        function addAppliance() {
+            const applianceInputs = document.getElementById("appliance-inputs");
+            const newApplianceGroup = document.createElement("div");
+            newApplianceGroup.classList.add("appliance-group");
+            newApplianceGroup.innerHTML = `
+                <label>Appliance Name:</label>
+                <input type="text" name="appliance_name[]" placeholder="Appliance Name" required>
+                <label>No of Appliances:</label>
+                <input type="number" name="num_appliances[]" placeholder="No of Appliances" min="1" required>
+                <label>Wattage (W):</label>
+                <input type="number" name="wattage[]" placeholder="Wattage" required>
+                <label>Time On (hours):</label>
+                <input type="number" name="time_on[]" placeholder="Time On" required>
+            `;
+            applianceInputs.appendChild(newApplianceGroup);
+        }
+
+        function finishInput() {
+            // Perform a quick validation to check if at least one appliance is entered
+            const applianceGroups = document.querySelectorAll(".appliance-group");
+            if (applianceGroups.length === 0) {
+                alert('Please add at least one appliance before submitting.');
+            } else {
+                alert('You have completed the appliance input. Click Predict to submit.');
+            }
+        }
+    </script>
+</body>
+</html>

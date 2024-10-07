@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authentication',
+    'prediction',
+
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,20 @@ STATICFILES_DIRS = [
 
 # Define the STATIC_ROOT for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # You can name this folder as you prefer
+
+
+# Email backend for development (prints emails to the console)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your_email_password'  # Use environment variables or Django secrets for security
+DEFAULT_FROM_EMAIL = 'Your Project <your_email@gmail.com>'
+
+# Default redirect URL after password reset
+PASSWORD_RESET_REDIRECT_URL = 'authentication:password_reset_done'
+
+
+# Ensure you have these settings configured
+SITE_ID = 1  # If using django.contrib.sites
