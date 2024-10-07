@@ -1,27 +1,48 @@
 import pandas as pd
 import joblib
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import ApplianceUsage, PredictedBudget
-from sklearn.preprocessing import OneHotEncoder
-from sklearn import __version__ as sklearn_version
+import gdown
+import tempfile  # To handle models directly from Google Drive
 
-# Load the trained model and encoder from the specified paths
-model_filename = 'savedModels/random_forest_model.joblib'
-encoder_filename = 'savedModels/onehot_encoder.joblib'
-loaded_model = joblib.load(model_filename)
-loaded_encoder = joblib.load(encoder_filename)
+# Google Drive file IDs for your model and encoder
+model_file_id = '1i_SlFv6QKYOJr4BtLRJwRiHGz1rb6K6P'  # Replace with your actual file ID
+encoder_file_id = '1v2RwlZENfxyaNMur9flbHCmrbLqpYPF3'  # Replace with your actual file ID
+
+# Function to download and load models from Google Drive
+def load_model_from_gdrive(file_id):
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        gdown.download(f'https://drive.google.com/uc?id={file_id}', temp_file.name, quiet=False)
+        temp_file.flush()
+        return joblib.load(temp_file.name)
+
+# Load the models from Google Drive
+try:
+    loaded_model = load_model_from_gdrive(model_file_id)
+    loaded_encoder = load_model_from_gdrive(encoder_file_id)
+    if not loaded_model or not loaded_encoder:
+        raise ValueError("Failed to load model or encoder from Google Drive.")
+except Exception as e:
+    print(f"Error loading models: {e}")
+    loaded_model = None
+    loaded_encoder = None
 
 def prepare_user_features(appliance_usage):
     # Convert the appliance usage list to a DataFrame
     df = pd.DataFrame(appliance_usage)
 
-    # Ensure that 'Appliance Name' is the only relevant feature for encoding
+    # Ensure the encoder is loaded
+    if loaded_encoder is None:
+        raise ValueError("Encoder not loaded. Please check the Google Drive link or file.")
+
+    # Ensure that 'Appliance Name' is present for encoding
     if 'Appliance Name' not in df.columns:
         raise ValueError("'Appliance Name' column is missing in the input data")
 
-    # Use the loaded encoder to transform the 'Appliance Name'
+    # Use the loaded encoder to transform 'Appliance Name'
     appliance_name_encoded = loaded_encoder.transform(df[['Appliance Name']])
-    
+
     # Convert to dense array if sparse
     if hasattr(appliance_name_encoded, 'toarray'):
         appliance_name_encoded = appliance_name_encoded.toarray()
@@ -32,7 +53,7 @@ def prepare_user_features(appliance_usage):
 
     # Prepare the numerical features
     numerical_features = ['No of Appliances', 'Wattage', 'Time On (hours)']
-    
+
     # Ensure all numerical features are present, fill with 0 if missing
     for feature in numerical_features:
         if feature not in df.columns:
@@ -50,11 +71,7 @@ def prepare_user_features(appliance_usage):
 
     return final_df
 
-
-
-
-
-# Main view for the application (renders the main.html form)
+# Main view for the application (renders the form)
 def predictor(request):
     return render(request, 'main.html')
 
@@ -66,6 +83,10 @@ def formInfo(request):
         num_appliances_list = request.POST.getlist('num_appliances[]')
         wattage_list = request.POST.getlist('wattage[]')
         time_on_list = request.POST.getlist('time_on[]')
+
+        # Validate input lengths (to prevent index out of bounds issues)
+        if not (len(appliance_names) == len(num_appliances_list) == len(wattage_list) == len(time_on_list)):
+            return HttpResponse("Input length mismatch", status=400)
 
         # Prepare the appliance usage data
         appliance_usage = []
@@ -90,31 +111,34 @@ def formInfo(request):
             appliance_usage_objects.append(appliance_usage_obj)
 
         # Prepare the user features for the prediction
-        user_features = prepare_user_features(appliance_usage)
+        try:
+            user_features = prepare_user_features(appliance_usage)
+        except ValueError as e:
+            return render(request, 'result.html', {'predicted_budget': f'Error: {str(e)}'})
 
         # Check if the user features are valid
         if user_features.isnull().values.any():
             return render(request, 'result.html', {'predicted_budget': 'Invalid input!'})
 
         # Make the prediction
-        predicted_budget = loaded_model.predict(user_features)
-        total_predicted_budget = sum(predicted_budget)
+        if loaded_model:
+            predicted_budget = loaded_model.predict(user_features)
+            total_predicted_budget = sum(predicted_budget)
 
-        # Save the predicted budget to the database
-        predicted_budget_obj = PredictedBudget(
-            predicted_budget=round(total_predicted_budget, 2)
-        )
-        predicted_budget_obj.save()
+            # Save the predicted budget to the database
+            predicted_budget_obj = PredictedBudget(
+                predicted_budget=round(total_predicted_budget, 2)
+            )
+            predicted_budget_obj.save()
 
-        # Associate the appliance usage with the predicted budget
-        predicted_budget_obj.appliance_usage.set(appliance_usage_objects)
-        predicted_budget_obj.save()
+            # Associate the appliance usage with the predicted budget
+            predicted_budget_obj.appliance_usage.set(appliance_usage_objects)
+            predicted_budget_obj.save()
 
-        # Render the result page with the prediction
-        return render(request, 'result.html', {'predicted_budget': round(total_predicted_budget, 2)})
+            # Render the result page with the prediction
+            return render(request, 'result.html', {'predicted_budget': round(total_predicted_budget, 2)})
+        else:
+            return render(request, 'result.html', {'predicted_budget': 'Model not loaded!'})
 
-    # If it's not a POST request, render the main form page again
+    # If not a POST request, render the main form page again
     return render(request, 'main.html')
-
-
-
