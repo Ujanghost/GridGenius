@@ -1,3 +1,8 @@
+
+
+
+
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #101010;
@@ -64,10 +69,10 @@ body {
 }
 
 /*header section*/
-.hero_area {
+/* .hero_area {
   height: 100vh;
   background-image: url(../images/hero-bg.png);
-}
+} */
 
 .sub_page .hero_area {
   height: auto;
@@ -708,3 +713,19 @@ a:focus {
   color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
+
+.rhombus-frame {
+  width: 350px; /* Adjust the size as needed */
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rhombus-frame img {
+  width: 100%; /* Make sure the image fills the container */
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits perfectly */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Creates the rhombus shape */
+}

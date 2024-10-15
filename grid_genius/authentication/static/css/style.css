@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  color: #101010;
+  color: #b3caff;
   background-color: #ffffff;
 }
 
@@ -35,7 +35,7 @@ body {
 }
 
 .custom_heading-container h2 {
-  color: #000000;
+  color: #fcfbfb;
   font-weight: 700;
   position: relative;
 }
@@ -64,10 +64,10 @@ body {
 }
 
 /*header section*/
-.hero_area {
+/* .hero_area {
   height: 100vh;
   background-image: url(../images/hero-bg.png);
-}
+} */
 
 .sub_page .hero_area {
   height: auto;
@@ -100,7 +100,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 30px;
-  color: #070101;
+  color: #f9f4f4;
   text-align: center;
 }
 
@@ -120,7 +120,7 @@ body {
 .custom_nav-container .user_option .login_btn-container a {
   display: inline-block;
   padding: 10px 30px;
-  color: #070101;
+  color: #fef8f8;
   text-align: center;
 }
 
