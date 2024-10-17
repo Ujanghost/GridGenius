@@ -1,0 +1,157 @@
+
+{% extends "base_no_header.html" %}
+
+{% load static %}
+
+
+{% block contents %}
+
+ <!-- contact section -->
+
+ <section class="contact_section ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
+          <h2 class="custom_heading">Contact Us</h2>
+          <form action="#">
+            <div>
+              <input type="text" placeholder="Name" />
+            </div>
+            <div>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" placeholder="Pone Number" />
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Message" />
+            </div>
+            <div class="d-flex  mt-4 ">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static 'images/contact.jpg' %}" alt="" class="w-100" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding-top layout_padding2-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="info_links pl-lg-5">
+            <h4>
+              Menu
+            </h4>
+            <ul>
+              <li class="active">
+                <a href="{% url 'authentication:home' %}">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'authentication:about' %}">
+                  About
+                </a>
+              </li>
+              <li>
+                <a class="" href="{% url 'authentication:portfolio' %}">Portfolio </a>
+              </li>
+              <li>
+                <a class="" href="{% url 'authentication:service' %}">Services</a>
+              </li>
+              <li>
+                <a href="{% url 'authentication:contact' %}">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_contact">
+            <h4>
+              Location
+            </h4>
+            <div>
+              <img src="{% static 'images/location.png' %}" alt="" />
+              <p>
+                104 loram ipusm
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'images/telephone.png' %}" alt="" />
+              <p>
+                ( +01 1234567890 )
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'images/envelope.png' %}" alt="" />
+              <p>
+                demo@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="info_social">
+            <h4>
+              Social Link
+            </h4>
+            <div class="social_container">
+              <div>
+                <a href="">
+                  <img src="{% static 'images/facebook-logo.png' %}" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="{% static 'images/twitter-logo.png' %}" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="{% static 'images/instagram.png' %}" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="{% static 'images/linkedin-sign.png' %}" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_form">
+            <h4>
+              Newsletter
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter Your Email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  {% endblock contents %}
+
+ 
