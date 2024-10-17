@@ -74,3 +74,6 @@ class PredictorViewTests(TestCase):
         self.assertTemplateUsed(response, 'result.html')
         self.assertIn('predicted_budget', response.context)
         self.assertEqual(response.context['predicted_budget'], 'Invalid input!')
+        
+        
+@patch('app.views.data_logging',return value=pd.Datafram

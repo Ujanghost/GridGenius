@@ -1,0 +1,31 @@
+Test Case ID,Test Case Description,Assumptions / Preconditions,Test Steps,Expected Results,Actual Results,Observation,Bug ID,Bug Description,Status,Comments
+SC-001,Verify home view requires login,User is not logged in,1. Navigate to home URL,Redirect to login page,Redirect to login page,,,,Pass,
+SC-002,Check signup view GET request,None,1. Send GET request to signup URL,Render signup.html template,Render signup.html template,,,,Pass,
+SC-003,Test valid user signup,No existing user with same email,1. Submit valid signup form data,User created and redirected to login,User created but not redirected,Redirect issue,NB-001,Signup not redirecting to login,Fail,Needs fixing
+SC-004,Test duplicate email signup,Existing user with email 'test@example.com',1. Submit signup form with duplicate email,User not created and error shown,User not created but no error message,Missing error handling,NB-002,No error message for duplicate email,Fail,Implement error message
+SC-005,Verify login view GET request,None,1. Send GET request to login URL,Render login.html template,Render login.html template,,,,Pass,
+SC-006,Test valid user login,User 'testuser' exists,1. Submit valid login credentials,User logged in and redirected to home,User logged in and redirected to home,,,,Pass,
+SC-007,Test invalid user login,No user with credentials exists,1. Submit invalid login credentials,Error message displayed,Error message displayed,,,,Pass,
+SC-008,Verify logout functionality,User is logged in,1. Access logout URL 2. Try accessing home page,1. Redirect to login 2. Redirect to login,1. Redirect to login 2. Redirect to login,,,,Pass,
+SC-009,Test about page rendering,None,1. Access about page URL,Render about.html template,Render about.html template,,,,Pass,
+SC-010,Check contact page rendering,None,1. Access contact page URL,Render contact.html template,Render contact.html template,,,,Pass,
+SC-011,Verify service page rendering,None,1. Access service page URL,Render service.html template,Render service.html template,,,,Pass,
+SC-012,Test portfolio page rendering,None,1. Access portfolio page URL,Render portfolio.html template,Render portfolio.html template,,,,Pass,
+SC-013,Check predictor view rendering,None,1. Access predictor URL,Render main.html template,Render main.html template,,,,Pass,
+SC-014,Test valid formInfo POST request,Model is loaded,1. Submit valid appliance data,Render result.html with predicted budget,Render result.html with incorrect budget,Prediction issue,NB-003,Incorrect budget prediction,Fail,Review prediction logic
+SC-015,Verify formInfo with unloaded model,Model is not loaded,1. Submit valid appliance data,Display 'Model not loaded!' message,Display 'Model not loaded!' message,,,,Pass,
+SC-016,Test formInfo with mismatched input,None,1. Submit form with mismatched input lengths,Return 400 status code,Return 400 status code,,,,Pass,
+SC-017,Check formInfo with unloaded encoder,Encoder is not loaded,1. Submit valid appliance data,Display 'Error: Encoder not loaded' message,Display 'Error: Encoder not loaded' message,,,,Pass,
+SC-018,Test formInfo with invalid user features,None,1. Submit data resulting in invalid features,Display 'Invalid input!' message,Display 'Invalid input!' message,,,,Pass,
+SC-019,Verify signup with weak password,None,1. Submit signup form with weak password,Display password strength error,No error displayed,Missing validation,NB-004,Weak password allowed,Fail,Implement password strength check
+SC-020,Test login with case-insensitive username,User 'TestUser' exists,1. Login with 'testuser',Successful login,Login failed,Case sensitivity issue,NB-005,Username case-sensitive,Fail,Make username case-insensitive
+SC-021,Check signup form field validation,None,1. Submit empty signup form,Display field validation errors,Display field validation errors,,,,Pass,
+SC-022,Test login form field validation,None,1. Submit empty login form,Display field validation errors,Display field validation errors,,,,Pass,
+SC-023,Verify user profile view after login,User is logged in,1. Access profile URL,Render profile.html with user data,Render profile.html with user data,,,,Pass,
+SC-024,Test password reset functionality,User exists,1. Request password reset 2. Click reset link 3. Set new password,Password successfully reset,Password successfully reset,,,,Pass,
+SC-025,Check predictor with extreme values,None,1. Submit form with very high wattage and usage time,Handle extreme values gracefully,Calculation error,Edge case handling,NB-006,Fails with extreme values,Fail,Implement input sanitization
+SC-026,Verify CSRF protection on forms,None,1. Submit form without CSRF token,Reject form submission,Reject form submission,,,,Pass,
+SC-027,Test user session timeout,User is logged in,1. Wait for session timeout 2. Try accessing protected page,Redirect to login page,Redirect to login page,,,,Pass,
+SC-028,Check mobile responsiveness of signup page,None,1. Access signup page on mobile device,Page renders correctly on mobile,Page renders correctly on mobile,,,,Pass,
+SC-029,Verify accessibility of login page,None,1. Check login page with screen reader,All elements are accessible,All elements are accessible,,,,Pass,
+SC-030,Test data persistence after failed prediction,None,1. Submit invalid data 2. Check form for entered data,Form fields retain entered data,Form fields empty,Data loss on error,NB-007,Form data not retained,Fail,Implement form data persistence
